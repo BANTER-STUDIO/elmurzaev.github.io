@@ -132,12 +132,15 @@
 				return;
 			} if (validURL(searchValue)) {
 				if (searchValue.startsWith('https://') || searchValue.startsWith('http://')) {
-					window.location.href = searchValue;
+					// window.location.href = searchValue;
+					window.open(searchValue, "_self")
 				} else {
-					window.location.href = 'http://' + searchValue;
+					// window.location.href = 'http://' + searchValue;
+					window.open('http://' + searchValue, "_self")
 				}
 			} else {
-				window.location.href = searchEngine + searchValue;
+				// window.location.href = searchEngine + searchValue;
+				window.open(searchEngine + searchValue, "_self")
 			}
 		}
 
