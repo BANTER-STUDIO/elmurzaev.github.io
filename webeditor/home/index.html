@@ -19,7 +19,7 @@
 			align-items: center;
 			justify-content: center;
 			width: 100%;
-			height: 500px;
+			height: 400px;
 			padding: 0;
 			margin: 0;
 		}
@@ -63,7 +63,7 @@
 			border: 1px solid transparent;
 			box-shadow: 0 1px 10px rgba(0,0,0,.2);
 		}
-		input.input-serach {
+		input.input-search {
 			padding: 10px 0;
 			margin: 0 10px;
 			outline: none;
@@ -88,43 +88,21 @@
 		}
 	</script>
 
-	<script type="text/javascript">
-		var searchEngineDefault = 'https://appsmartfind.com/?n=20&q=';
-		var searchEngine = 'https://appsmartfind.com/?n=20&q=';
-
-		if (localStorage.getItem('urlSearchEngine') === '') {
-			localStorage.setItem('urlSearchEngine', searchEngine);
-		} else {
-			searchEngine = localStorage.getItem('urlSearchEngine');
-		}
-
-		function changeSerachEngine(url_search) {
-			searchEngine = url_search;
-			localStorage.setItem('urlSearchEngine', url_search);
-		}
-		function changeSerachEngineDefault() {
-			searchEngine = searchEngineDefault;
-			localStorage.setItem('urlSearchEngine', searchEngineDefault);
-		}
-	</script>
-
 	<div class="content">
 		<center>
 			<img src="logo.png" class="logo" draggable="false">
 
 			<div class="search-container">
 				<img src="search.png" class="search-icon" draggable="false">
-				<input type="search" id="input-serach" class="input-serach" placeholder="" onkeypress="return keyScriptInputSearch(event)" minlength="1" maxlength="500">
+				<input type="search" id="input-search" class="input-search" placeholder="" onkeypress="return keyScriptInputSearch(event)" minlength="1" maxlength="500">
 			</div>
-			
-			<p style="color:red; font-family: sans-serif;"> This page is unfortunately broken! Please wait for the update!</p>
 		</center>
 	</div>
 
 
 	<script type="text/javascript">
 		function goSearch() {
-			var searchValue = document.getElementById('input-serach').value;
+			var searchValue = document.getElementById('input-search').value;
 
 			if (searchValue.length < 1) {
 				alert('Too short!');
@@ -134,15 +112,12 @@
 				return;
 			} if (validURL(searchValue)) {
 				if (searchValue.startsWith('https://') || searchValue.startsWith('http://')) {
-					// window.location.href = searchValue;
-					window.open(searchValue, "_self")
+					window.location.href = searchValue;
 				} else {
-					// window.location.href = 'http://' + searchValue;
-					window.open('http://' + searchValue, "_self")
+					window.location.href = 'http://' + searchValue;
 				}
 			} else {
-				// window.location.href = searchEngine + searchValue;
-				window.open(searchEngine + searchValue, "_self")
+				window.location.href = 'https://appsmartfind.com/?n=20&q=' + searchValue;
 			}
 		}
 
