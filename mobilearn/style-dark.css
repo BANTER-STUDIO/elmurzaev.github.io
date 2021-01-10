@@ -1,14 +1,11 @@
 @font-face {
-    font-family: 'LatoWebSemibold';
-    src: url('fonts/Lato-Semibold.woff2') format('woff2'), /* Modern Browsers */
-         url('fonts/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
-         url('fonts/Lato-Semibold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
+    font-family: 'Panton';
+    src: url('fonts/Panton-Semibold.woff') format('woff'), /* Modern Browsers */
+         url('fonts/Panton-Semibold.ttf') format('truetype');
 }
 
 * {
-    font-family: 'LatoWebSemibold', sans-serif;
+    font-family: 'Panton', sans-serif;
 	  color: white;
     padding: 1px;
 }
